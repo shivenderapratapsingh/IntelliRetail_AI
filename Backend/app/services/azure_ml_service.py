@@ -1,8 +1,8 @@
 import requests
 
-from app.core.logger import logger
 from dotenv import load_dotenv
 import os
+from app.core.logger import logger
 
 load_dotenv()
 
