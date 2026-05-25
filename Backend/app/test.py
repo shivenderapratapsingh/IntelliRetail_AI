@@ -4,8 +4,7 @@ from app.graphs.graph_builder import workflow
 
 
 query = """
-Which category has lowest sales
-and forecast future demand?
+Using internal retail documents and current market trends, suggest how the business can improve customer retention.
 """
 
 initial_state = AgentState(

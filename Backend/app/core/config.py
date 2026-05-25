@@ -89,3 +89,16 @@ LANGCHAIN_API_KEY = os.getenv(
 LANGCHAIN_PROJECT = os.getenv(
     "LANGCHAIN_PROJECT"
 )
+
+JWT_COOKIE_NAME = os.getenv(
+    "JWT_COOKIE_NAME"
+)
+
+JWT_EXPIRATION_SECONDS = os.getenv(
+    "JWT_EXPIRATION_SECONDS"
+)
+
+JWT_SECRET_KEY = os.getenv(
+    "JWT_SECRET_KEY"
+)
+

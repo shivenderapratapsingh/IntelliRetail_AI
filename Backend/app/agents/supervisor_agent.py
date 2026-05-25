@@ -158,7 +158,7 @@ def supervisor_agent(state: AgentState):
 
         if "forecast" in routes:
 
-            state = forecast_agent(state)
+            state.forecast_input is None
 
         if "anomaly" in routes:
 
@@ -179,6 +179,9 @@ def supervisor_agent(state: AgentState):
 
         Combine all available agent outputs into
         ONE final professional response.
+
+        
+  
 
         User Query:
         {state.user_query}

@@ -39,7 +39,6 @@ def agent_chat(
         #State query
 
         state = AgentState(
-
             user_query=payload.query
         )
 

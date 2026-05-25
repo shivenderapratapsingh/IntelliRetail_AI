@@ -51,6 +51,9 @@ def market_agent(state: AgentState):
             "results",
             []
         )
+        print("It is from tavily--------------------------------")
+        print(results)
+        print("It is from tavily--------------------------------")
 
 
 

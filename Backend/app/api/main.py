@@ -11,6 +11,14 @@ from app.api.routes.agent_routes import (
     router as agent_router
 )
 
+from app.api.routes.auth_routes import (
+    router as auth_router
+)
+
+from app.api.middleware.auth_middleware import (
+    AuthMiddleware
+)
+
 from app.api.routes.ingestion_routes import (
     router as ingestion_router
 )
@@ -59,6 +67,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.add_middleware(AuthMiddleware)
+
 
 #Register routes
 
@@ -72,6 +82,10 @@ app.include_router(
 
 app.include_router(
     agent_router
+)
+
+app.include_router(
+    auth_router
 )
 
 
