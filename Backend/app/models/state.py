@@ -1,57 +1,52 @@
 from typing import Optional, List, Dict
 
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 
 
 class AgentState(BaseModel):
 
-    # =====================================================
-    # USER INPUT
-    # =====================================================
+    #user input
 
     user_query: str
 
-    # =====================================================
-    # ROUTING
-    # =====================================================
+    #routing
 
-    route: Optional[str] = None
+    routes: list[str] = Field(default_factory=list)
 
-    # =====================================================
-    # SQL AGENT
-    # =====================================================
+    #sql agent
 
     generated_sql: Optional[str] = None
 
     sql_result: Optional[List[Dict]] = None
 
-    # =====================================================
-    # FORECAST
-    # =====================================================
+    #forecast
 
     prediction: Optional[float] = None
 
-    # =====================================================
-    # ANOMALY
-    # =====================================================
+    #Anomaly
 
     anomaly_status: Optional[str] = None
 
-    # =====================================================
-    # DOCUMENT AGENT
-    # =====================================================
+    #market insights we add
+
+    market_insights: Optional[list] = None
+
+    #document agent
 
     retrieved_documents: Optional[List[Dict]] = None
 
-    # =====================================================
-    # FINAL RESPONSE
-    # =====================================================
+
+    #structured input
+
+    forecast_input: Optional[dict] = None
+
+    anomaly_input: Optional[dict] = None
+
+    #final response
 
     final_answer: Optional[str] = None
 
-    # =====================================================
-    # METADATA
-    # =====================================================
+    #meta deta
 
     success: bool = True
 

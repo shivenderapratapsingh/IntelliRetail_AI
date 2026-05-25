@@ -2,11 +2,11 @@ import logging
 import os
 
 
-# create logs directory if not exists
+#create logs if directory does'nt create it
 os.makedirs("logs", exist_ok=True)
 
 
-# configure logger
+#configure loggger
 logging.basicConfig(
     level=logging.INFO,
 
@@ -24,5 +24,5 @@ logging.basicConfig(
 )
 
 
-# create logger instance
+
 logger = logging.getLogger("IntelliRetailAI")

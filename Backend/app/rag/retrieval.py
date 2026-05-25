@@ -13,9 +13,7 @@ from app.core.config import (
 )
 
 
-# =========================================================
-# INITIALIZE EMBEDDINGS
-# =========================================================
+
 
 print("Initializing embeddings...")
 
@@ -29,9 +27,7 @@ embeddings = AzureOpenAIEmbeddings(
 print("Embeddings initialized")
 
 
-# =========================================================
-# INITIALIZE VECTOR STORE
-# =========================================================
+#Intializing vector store
 
 print("Connecting to Azure AI Search...")
 
@@ -45,9 +41,7 @@ vector_store = AzureSearch(
 print("Azure AI Search connected")
 
 
-# =========================================================
-# RETRIEVE DOCUMENTS
-# =========================================================
+#retrieve document
 
 def retrieve_documents(query: str, k: int = 3):
 

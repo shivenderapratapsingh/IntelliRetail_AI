@@ -14,9 +14,7 @@ from app.core.config import (
 )
 
 
-# =========================================================
-# INITIALIZE LLM
-# =========================================================
+
 
 llm = AzureChatOpenAI(
     api_key=AZURE_OPENAI_API_KEY,
@@ -27,38 +25,17 @@ llm = AzureChatOpenAI(
 )
 
 
-# =========================================================
-# FORECAST AGENT
-# =========================================================
 
 def forecast_agent(state: AgentState):
 
     try:
+        #Here is input data
+        input_data = state.forecast_input
 
-        # =================================================
-        # SAMPLE INPUT DATA
-        # =================================================
-
-        input_data = {
-            "Quantity": 8,
-            "Profit": 250.75,
-            "Returns": 0,
-            "Order_Year": 2025,
-            "Order_Month": 11,
-            "Order_Day": 15,
-            "Profit_Margin": 22.5,
-            "Shipping_Days": 2
-        }
-
-        # =================================================
-        # CALL FORECAST SERVICE
-        # =================================================
+        #Here is forcast service
 
         result = forecast_sales(input_data)
 
-        # =================================================
-        # HANDLE ERRORS
-        # =================================================
 
         if result["status"] == "error":
 
@@ -70,15 +47,11 @@ def forecast_agent(state: AgentState):
 
         prediction = result["predicted_sales"]
 
-        # =================================================
-        # STORE PREDICTION
-        # =================================================
+        #Prediction
 
         state.prediction = prediction
 
-        # =================================================
-        # BUSINESS EXPLANATION
-        # =================================================
+
 
         prompt = f"""
         You are a retail forecasting analyst.
@@ -86,17 +59,25 @@ def forecast_agent(state: AgentState):
         User Query:
         {state.user_query}
 
-        Predicted Sales:
-        {prediction}
+        Predicted Sales Value:
+        {round(prediction, 2)}
 
-        Explain the forecast in simple business language.
-
-        Keep response concise and professional.
+        Your task:
+        - Explain the predicted sales value in simple business language.
+        - Keep the response concise and professional.
+        - Do NOT mention units unless explicitly provided.
+        - Focus on business impact and retail insight.
         """
 
         response = llm.invoke(prompt)
 
+
+
         state.final_answer = response.content
+
+
+
+        state.success = True
 
         return state
 

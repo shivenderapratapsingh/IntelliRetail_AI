@@ -12,9 +12,7 @@ from app.core.config import (
 )
 
 
-# =========================================================
-# INITIALIZE LLM
-# =========================================================
+
 
 llm = AzureChatOpenAI(
     api_key=AZURE_OPENAI_API_KEY,
@@ -25,26 +23,20 @@ llm = AzureChatOpenAI(
 )
 
 
-# =========================================================
-# DOCUMENT AGENT
-# =========================================================
+#document agent 
 
 def document_agent(state: AgentState):
 
     try:
 
-        # =================================================
-        # RETRIEVE RELEVANT DOCUMENTS
-        # =================================================
+        #Here we retrieving relevant document
 
         retrieval_result = retrieve_documents(
             query=state.user_query,
             k=3
         )
 
-        # =================================================
-        # HANDLE ERRORS
-        # =================================================
+        #This is for error handlinf
 
         if not retrieval_result["success"]:
 
@@ -56,24 +48,18 @@ def document_agent(state: AgentState):
 
         documents = retrieval_result["results"]
 
-        # =================================================
-        # STORE RETRIEVED DOCS
-        # =================================================
+        #Here we storing retieved document
 
         state.retrieved_documents = documents
 
-        # =================================================
-        # BUILD CONTEXT
-        # =================================================
+        #here create contect form document
 
         context = "\n\n".join([
             doc["content"]
             for doc in documents
         ])
 
-        # =================================================
-        # PROMPT
-        # =================================================
+
 
         prompt = f"""
         You are a Retail Knowledge Assistant.
@@ -91,9 +77,7 @@ def document_agent(state: AgentState):
         {state.user_query}
         """
 
-        # =================================================
-        # LLM RESPONSE
-        # =================================================
+        #Here is llm response
 
         response = llm.invoke(prompt)
 

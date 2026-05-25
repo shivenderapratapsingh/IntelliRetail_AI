@@ -9,9 +9,7 @@ from app.core.config import (
 )
 
 
-# =========================================================
-# MONGODB CONNECTION
-# =========================================================
+#mongo db connection
 
 client = MongoClient(MONGODB_URI)
 
@@ -20,9 +18,7 @@ db = client[MONGODB_DATABASE]
 conversation_collection = db["conversation_memory"]
 
 
-# =========================================================
-# SAVE CONVERSATION
-# =========================================================
+#save conversation
 
 def save_conversation(state: AgentState):
 
@@ -61,9 +57,7 @@ def save_conversation(state: AgentState):
         }
 
 
-# =========================================================
-# GET RECENT CONVERSATIONS
-# =========================================================
+#get recent conversation
 
 def get_recent_conversations(limit: int = 5):
 

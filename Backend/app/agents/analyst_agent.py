@@ -10,9 +10,7 @@ from app.core.config import (
 )
 
 
-# =========================================================
-# INITIALIZE LLM
-# =========================================================
+#intialize llm
 
 llm = AzureChatOpenAI(
     api_key=AZURE_OPENAI_API_KEY,
@@ -23,21 +21,15 @@ llm = AzureChatOpenAI(
 )
 
 
-
-
-
-# =========================================================
-# ANALYST AGENT
-# =========================================================
+#analyst agent
 
 def analyst_agent(state: AgentState):
 
     try:
 
-        # RUN SQL TOOL
+        # run sql tooool
         sql_result = run_sql_tool(state.user_query)
 
-        # HANDLE ERRORS
         if not sql_result["success"]:
 
             state.success = False
@@ -45,7 +37,7 @@ def analyst_agent(state: AgentState):
 
             return state
 
-        # EXTRACT DATA
+        # doing extraction of data
         generated_sql = sql_result["generated_sql"]
 
         data = sql_result["data"]
@@ -54,15 +46,28 @@ def analyst_agent(state: AgentState):
 
         state.sql_result = data
 
-        # PROMPT
+        #Here we going to enter prompt
         prompt = f"""
-        ...
+        You are a retail business analyst.
+
+        User Question:
+        {state.user_query}
+
+        Generated SQL:
+        {generated_sql}
+
+        SQL Result:
+        {data}
+
+        Explain the result in concise business language.
+
+        Keep response professional and easy to understand.
         """
 
         response = llm.invoke(prompt)
 
         state.final_answer = response.content
-        state.agent_name = "analyst_agent"
+        # state.agent_name = "analyst_agent" #Just for checking purpose
 
         return state
 

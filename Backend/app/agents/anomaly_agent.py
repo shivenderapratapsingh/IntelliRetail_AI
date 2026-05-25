@@ -14,82 +14,121 @@ from app.core.config import (
     SCALER_PATH
 )
 
+from app.core.logger import logger
 
-# =========================================================
-# INITIALIZE LLM
-# =========================================================
+
+#llm
 
 llm = AzureChatOpenAI(
+
     api_key=AZURE_OPENAI_API_KEY,
+
     azure_endpoint=AZURE_OPENAI_ENDPOINT,
+
     azure_deployment=AZURE_OPENAI_DEPLOYMENT,
+
     api_version=AZURE_OPENAI_API_VERSION,
+
     temperature=0
 )
 
 
-# =========================================================
-# LOAD MODEL + SCALER
-# =========================================================
+#Here i am doing two things first using scaler to give equal weightage to each column value and then fee
+#vale to model
 
-model = joblib.load(ANOMALY_MODEL_PATH)
+model = joblib.load(
+    ANOMALY_MODEL_PATH
+)
 
-scaler = joblib.load(SCALER_PATH)
+scaler = joblib.load(
+    SCALER_PATH
+)
 
+#Anomaly agent
 
-# =========================================================
-# ANOMALY AGENT
-# =========================================================
-
-def anomaly_agent(state: AgentState):
+def anomaly_agent(
+    state: AgentState
+):
 
     try:
 
-        # =================================================
-        # SAMPLE INPUT
-        # =================================================
+        logger.info(
+            "Anomaly agent started"
+        )
 
-        input_data = pd.DataFrame([{
-            "Sales": 10000,
-            "Profit": -5000,
-            "Quantity": 1,
-            "Profit_Margin": -50,
-            "Shipping_Days": 15
-        }])
 
-        # =================================================
-        # SCALE DATA
-        # =================================================
+        #Validate input means checking if input is correct or not
 
-        scaled_data = scaler.transform(input_data)
+        if not state.anomaly_input:
 
-        # =================================================
-        # PREDICT
-        # =================================================
+            logger.warning(
+                "No anomaly input provided"
+            )
 
-        prediction = model.predict(scaled_data)[0]
+            state.success = False
 
-        # =================================================
-        # INTERPRET RESULT
-        # =================================================
+            state.error = (
+                "Anomaly input data is required"
+            )
+
+            return state
+
+        #Here what we are doing is that we create dataframe the input user feed so model generate correct result 
+
+        input_data = pd.DataFrame([
+            state.anomaly_input
+        ])
+
+        logger.info(
+            f"Input Data: {input_data.to_dict(orient='records')}"
+        )
+
+
+        #Scale data 
+
+        scaled_data = scaler.transform(
+            input_data
+        )
+
+        logger.info(
+            "Data scaling completed"
+        )
+
+        #Here we are predicting result
+
+        prediction = model.predict(
+            scaled_data
+        )[0]
+
+        logger.info(
+            f"Prediction Result: {prediction}"
+        )
+
+        #Here we interpreting resutl
 
         if prediction == -1:
 
-            anomaly_status = "Anomaly Detected"
+            anomaly_status = (
+                "Anomaly Detected"
+            )
 
         else:
 
-            anomaly_status = "Normal Transaction"
+            anomaly_status = (
+                "Normal Transaction"
+            )
 
-        # =================================================
-        # STORE IN STATE
-        # =================================================
+        #Store status
 
-        state.anomaly_status = anomaly_status
+        state.anomaly_status = (
+            anomaly_status
+        )
 
-        # =================================================
-        # BUSINESS EXPLANATION
-        # =================================================
+        logger.info(
+            f"Anomaly Status: {anomaly_status}"
+        )
+
+        #Here we are entering prompt
 
         prompt = f"""
         You are a retail anomaly detection analyst.
@@ -108,13 +147,29 @@ def anomaly_agent(state: AgentState):
         Keep response concise and professional.
         """
 
-        response = llm.invoke(prompt)
+        response = llm.invoke(
+            prompt
+        )
 
-        state.final_answer = response.content
+        #Here we are storing final result
+        state.final_answer = (
+            response.content
+        )
+
+
+        state.success = True
+
+        logger.info(
+            "Anomaly agent completed successfully"
+        )
 
         return state
 
     except Exception as e:
+
+        logger.error(
+            f"Anomaly agent failed: {str(e)}"
+        )
 
         state.success = False
 

@@ -11,16 +11,12 @@ from sklearn.preprocessing import StandardScaler
 from core.logger import logger
 
 
-# =========================================================
-# LOAD ENV VARIABLES
-# =========================================================
+
 
 load_dotenv()
 
 
-# =========================================================
-# ENV VARIABLES
-# =========================================================
+
 
 CONNECTION_STRING = os.getenv(
     "AZURE_STORAGE_CONNECTION_STRING"
@@ -43,9 +39,7 @@ MODEL_PATH = os.getenv(
 )
 
 
-# =========================================================
-# DOWNLOAD DATASET FROM AZURE BLOB
-# =========================================================
+#Here what i am doing is downloading data from blob
 
 try:
 
@@ -85,9 +79,7 @@ except Exception as e:
     raise
 
 
-# =========================================================
-# LOAD DATASET
-# =========================================================
+#load that dataset which we downloaded
 
 try:
 
@@ -110,9 +102,7 @@ except Exception as e:
     raise
 
 
-# =========================================================
-# FEATURE SELECTION
-# =========================================================
+#feature selection
 
 FEATURE_COLUMNS = [
     "Sales",
@@ -129,9 +119,7 @@ logger.info(
 X = df[FEATURE_COLUMNS]
 
 
-# =========================================================
-# HANDLE MISSING VALUES
-# =========================================================
+#handling missing values
 
 logger.info(
     "Handling missing values..."
@@ -140,9 +128,7 @@ logger.info(
 X = X.fillna(0)
 
 
-# =========================================================
-# FEATURE SCALING
-# =========================================================
+#applying feature scaling
 
 logger.info(
     "Applying feature scaling..."
@@ -157,9 +143,7 @@ logger.info(
 )
 
 
-# =========================================================
-# TRAIN ISOLATION FOREST MODEL
-# =========================================================
+#Train isolation model
 
 logger.info(
     "Training Isolation Forest model..."
@@ -178,9 +162,7 @@ logger.info(
 )
 
 
-# =========================================================
-# GENERATE PREDICTIONS
-# =========================================================
+#Generate prediciton
 
 logger.info(
     "Generating anomaly predictions..."
@@ -209,10 +191,7 @@ logger.info(
 )
 
 
-# =========================================================
-# EVALUATION
-# =========================================================
-
+#Evaluation
 logger.info(
     "Evaluating anomaly results..."
 )
@@ -234,9 +213,7 @@ logger.info(
 )
 
 
-# =========================================================
-# SAMPLE ANOMALIES
-# =========================================================
+#sample anomalies
 
 logger.info(
     "Displaying sample anomalies..."
@@ -256,9 +233,7 @@ print(sample_anomalies)
 from sklearn.metrics import classification_report
 
 
-# =========================================================
-# SYNTHETIC GROUND TRUTH
-# =========================================================
+#synthesis 
 
 df["GroundTruth"] = (
     (df["Profit"] < 0) &
@@ -266,18 +241,14 @@ df["GroundTruth"] = (
 ).astype(int)
 
 
-# =========================================================
-# CONVERT MODEL PREDICTIONS
-# =========================================================
+#convert model prediction
 
 df["Predicted"] = (
     df["Anomaly_Prediction"] == -1
 ).astype(int)
 
 
-# =========================================================
-# EVALUATION REPORT
-# =========================================================
+#evaluation report
 
 report = classification_report(
     df["GroundTruth"],
@@ -293,9 +264,7 @@ logger.info(
 )
 
 
-# =========================================================
-# SAVE MODEL
-# =========================================================
+#save model
 
 logger.info(
     "Saving anomaly model..."
@@ -311,9 +280,7 @@ logger.info(
 )
 
 
-# =========================================================
-# SAVE SCALER
-# =========================================================
+#save scaler
 
 SCALER_PATH = (
     "app/ml/artifacts/anomaly_scaler.pkl"
@@ -330,9 +297,7 @@ logger.info(
 
 
 
-# =========================================================
-# SAVE OUTPUT CSV
-# =========================================================
+#save ouput csv
 
 OUTPUT_PATH = "anomaly_output.csv"
 
@@ -346,9 +311,7 @@ logger.info(
 )
 
 
-# =========================================================
-# FINAL SUMMARY
-# =========================================================
+#final summary
 
 logger.info(
     "Anomaly detection pipeline completed successfully!"

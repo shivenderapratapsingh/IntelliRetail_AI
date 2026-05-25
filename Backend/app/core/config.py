@@ -73,3 +73,19 @@ FORECAST_MODEL_PATH = "app/ml/artifacts/forecast_model.pkl"
 MONGODB_URI = os.getenv("MONGODB_URI")
 
 MONGODB_DATABASE = os.getenv("MONGODB_DATABASE")
+
+#Tavily Connection
+TAVILY_API_KEY=os.getenv("TAVILY_API_KEY")
+
+#Application Insights
+
+APPLICATIONINSIGHTS_CONNECTION_STRING=os.getenv("APPLICATIONINSIGHTS_CONNECTION_STRING")
+
+
+LANGCHAIN_API_KEY = os.getenv(
+    "LANGCHAIN_API_KEY"
+)
+
+LANGCHAIN_PROJECT = os.getenv(
+    "LANGCHAIN_PROJECT"
+)

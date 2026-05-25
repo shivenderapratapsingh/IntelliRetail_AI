@@ -25,17 +25,15 @@ from app.core.config import (
 
 def index_docs():
 
-    # ========================================================
-    # PDF FOLDER PATH
-    # ========================================================
+
+
+    #pdf folder path
 
     data_folder = r"D:\INTELLIRETAIL_AI\Backend\data\document"
 
     print(f"Looking for PDFs inside: {data_folder}")
 
-    # ========================================================
-    # INITIALIZE EMBEDDINGS
-    # ========================================================
+    #Intialize embeddings
 
     try:
 
@@ -54,13 +52,11 @@ def index_docs():
         print(f"Embeddings initialization failed: {e}")
         return
 
-    # ========================================================
-    # INITIALIZE AZURE SEARCH
-    # ========================================================
+    #Intialize azure search
 
     try:
 
-        print("Initializing Azure AI Search...")
+        print("Initializing Azure AI Search......")
 
         vector_store = AzureSearch(
             azure_search_endpoint=AZURE_SEARCH_ENDPOINT,
@@ -75,9 +71,8 @@ def index_docs():
         print(f"Azure Search initialization failed: {e}")
         return
 
-    # ========================================================
-    # FIND PDF FILES
-    # ========================================================
+
+    #Find pdf files
 
     pdf_files = glob.glob(os.path.join(data_folder, "*.pdf"))
 
@@ -89,9 +84,7 @@ def index_docs():
 
     all_splits = []
 
-    # ========================================================
-    # PROCESS EACH PDF
-    # ========================================================
+    #process each pdf
 
     for pdf_path in pdf_files:
 
@@ -107,9 +100,7 @@ def index_docs():
 
             print(f"Loaded {len(raw_docs)} pages")
 
-            # ====================================================
-            # CHUNKING
-            # ====================================================
+            #chunking
 
             text_splitter = RecursiveCharacterTextSplitter(
                 chunk_size=1000,
@@ -118,7 +109,7 @@ def index_docs():
 
             splits = text_splitter.split_documents(raw_docs)
 
-            # Add source metadata
+            # we adding some meta data
             for split in splits:
                 split.metadata["source"] = file_name
 
@@ -129,9 +120,9 @@ def index_docs():
         except Exception as e:
             print(f"Failed to process {pdf_path}: {e}")
 
-    # ========================================================
-    # UPLOAD TO AZURE SEARCH
-    # ========================================================
+
+
+    #uploading to azure search
 
     if all_splits:
 

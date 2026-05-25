@@ -4,6 +4,7 @@ from app.agents.analyst_agent import analyst_agent
 from app.agents.forecast_agent import forecast_agent
 from app.agents.anomaly_agent import anomaly_agent
 from app.agents.document_agent import document_agent
+from app.agents.market_agent import market_agent
 
 from app.models.state import AgentState
 
@@ -43,55 +44,61 @@ def classify_query(
 ):
 
     prompt = f"""
-    You are an AI supervisor agent.
+    You are an AI orchestration supervisor.
 
-    Your task is to classify the user query into ONE category.
+    Your task is to identify ALL agents required
+    to answer the user query.
 
-    Conversation History:
-    {conversation_history}
-
-    Categories:
+    Available agents:
 
     1. analyst
        - sales
        - revenue
-       - profit
-       - KPIs
        - SQL analytics
-       - regions
-       - categories
+       - KPIs
+       - profit
        - retail metrics
 
     2. forecast
-       - forecasting
-       - future prediction
        - future sales
-       - next month sales
+       - prediction
+       - demand forecasting
 
     3. anomaly
-       - anomalies
-       - unusual activity
        - fraud
+       - anomalies
        - abnormal behavior
 
     4. document
-       - PDF questions
        - policies
-       - knowledge base
-       - documentation
+       - SOPs
+       - PDF knowledge base
 
-    5. reject
-       - unrelated questions
-       - general chat
-       - weather
-       - politics
+    5. market
+       - trending products
+       - competitors
+       - retail trends
+       - market demand
+       - popular products
+       - industry insights
 
-    Return ONLY one word:
+    Rules:
+    - Return ALL relevant agents.
+    - Multiple agents are allowed.
+    - Return comma-separated values only.
+    - Do NOT explain.
+
+    Examples:
     analyst
-    forecast
-    anomaly
+    analyst,forecast
+    analyst,anomaly
     document
-    reject
+    market
+    analyst,market
+    forecast,market
+
+    Conversation History:
+    {conversation_history}
 
     Current User Query:
     {state.user_query}
@@ -99,86 +106,126 @@ def classify_query(
 
     response = llm.invoke(prompt)
 
-    return response.content.strip().lower()
+    routes = response.content.strip().lower()
+
+    return [
+        route.strip()
+        for route in routes.split(",")
+    ]
 
 
-# =========================================================
-# SUPERVISOR AGENT
-# =========================================================
+#super visor agent
 
 def supervisor_agent(state: AgentState):
 
-    # =====================================================
-    # LOAD RECENT MEMORY
-    # =====================================================
+    try:
 
-    memory_result = get_recent_conversations(limit=3)
+        #Load recent memory
 
-    conversation_history = ""
+        memory_result = get_recent_conversations(limit=3)
 
-    if memory_result["success"]:
+        conversation_history = ""
 
-        conversations = memory_result["conversations"]
+        if memory_result["success"]:
 
-        for convo in conversations:
+            conversations = memory_result["conversations"]
 
-            conversation_history += f"""
-            User: {convo['user_query']}
-            Assistant: {convo['final_answer']}
-            """
+            for convo in conversations:
 
-    # =====================================================
-    # CLASSIFY QUERY
-    # =====================================================
+                conversation_history += f"""
+                User: {convo['user_query']}
+                Assistant: {convo['final_answer']}
+                """
 
-    route = classify_query(
-        state,
-        conversation_history
-    )
+        #classigy_query
 
-    # =====================================================
-    # STORE ROUTE
-    # =====================================================
+        routes = classify_query(
+            state,
+            conversation_history
+        )
 
-    state.route = route
+        #store routes
 
-    print("\nROUTE:\n")
-    print(route)
+        state.routes = routes
 
-    # =====================================================
-    # ROUTING
-    # =====================================================
+        print("\nROUTES:\n")
+        print(routes)
 
-    if route == "analyst":
+        #Multi agent orchestrate
+        if "analyst" in routes:
 
-        updated_state = analyst_agent(state)
+            state = analyst_agent(state)
 
-    elif route == "forecast":
+        if "forecast" in routes:
 
-        updated_state = forecast_agent(state)
+            state = forecast_agent(state)
 
-    elif route == "anomaly":
+        if "anomaly" in routes:
 
-        updated_state = anomaly_agent(state)
+            state = anomaly_agent(state)
 
-    elif route == "document":
+        if "document" in routes:
 
-        updated_state = document_agent(state)
+            state = document_agent(state)
 
-    else:
+        if "market" in routes:
+
+            state = market_agent(state)
+
+        #Here what we are doing is synthesize complete result 
+
+        synthesis_prompt = f"""
+        You are an enterprise retail AI assistant.
+
+        Combine all available agent outputs into
+        ONE final professional response.
+
+        User Query:
+        {state.user_query}
+
+        SQL Result:
+        {state.sql_result}
+
+        Forecast Prediction:
+        {state.prediction}
+
+        Anomaly Status:
+        {state.anomaly_status}
+
+        Document Context:
+        {state.retrieved_documents}
+
+        Market Insights:
+        {state.market_insights}
+
+        Existing Partial Answer:
+        {state.final_answer}
+
+        Rules:
+        - Combine insights clearly
+        - Keep response concise
+        - Use professional business language
+        - Do NOT hallucinate
+        - Only use available information
+        """
+
+        final_response = llm.invoke(
+            synthesis_prompt
+        )
+
+        state.final_answer = (
+            final_response.content
+        )
+        #save conversation
+
+        save_conversation(state)
+
+        return state
+
+    except Exception as e:
 
         state.success = False
 
-        state.error = (
-            "Query is unrelated to IntelliRetail AI system."
-        )
+        state.error = str(e)
 
-        updated_state = state
-
-    # =====================================================
-    # SAVE CONVERSATION
-    # =====================================================
-
-    save_conversation(updated_state)
-
-    return updated_state
+        return state

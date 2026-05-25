@@ -6,22 +6,16 @@ from app.core.config import (
 )
 
 
-# =========================================================
-# MONGODB CLIENT
-# =========================================================
+#Mongodb client
 
 client = MongoClient(MONGODB_URI)
 
 
-# =========================================================
-# DATABASE
-# =========================================================
+#databse
 
 db = client[MONGODB_DATABASE]
 
 
-# =========================================================
-# COLLECTION
-# =========================================================
+#collection
 
 conversation_collection = db["conversation_memory"]
