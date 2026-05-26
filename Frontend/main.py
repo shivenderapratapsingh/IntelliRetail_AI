@@ -5,8 +5,12 @@ import requests
 import streamlit as st
 
 
-DEFAULT_API_URL = "http://127.0.0.1:8000"
+import os
 
+DEFAULT_API_URL = os.getenv(
+    "BACKEND_API_URL",
+    "http://127.0.0.1:8000"
+)
 
 def init_state() -> None:
     if "api_url" not in st.session_state:
