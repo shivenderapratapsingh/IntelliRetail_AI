@@ -13,7 +13,7 @@ from app.models.agent_schema import (
 from app.core.logger import logger
 
 
-#Router
+
 
 router = APIRouter()
 
@@ -35,14 +35,17 @@ def agent_chat(
         logger.info(
             f"User Query: {payload.query}"
         )
-        
-        #State query
+
+
 
         state = AgentState(
-            user_query=payload.query
+
+            user_query=payload.query,
+
+            chat_history=payload.chat_history
         )
 
-        #run langgraph workflow
+
 
         result = workflow.invoke(state)
 

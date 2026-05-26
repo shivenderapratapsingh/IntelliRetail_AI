@@ -1,19 +1,11 @@
-import base64
-import hashlib
-import hmac
-import json
-import os
-import time
+import hashlib, jwt, time
 from datetime import datetime
 from uuid import uuid4
-
 from fastapi import APIRouter, HTTPException, Response, status
-from pydantic import BaseModel
-from pymongo import MongoClient
-
+from app.api.db.client import db
+from app.models.api_schemas import LoginRequest, SignupRequest
+import os
 from app.core.config import (
-    MONGODB_DATABASE,
-    MONGODB_URI,
     JWT_COOKIE_NAME,
     JWT_EXPIRATION_SECONDS,
     JWT_SECRET_KEY
@@ -21,56 +13,25 @@ from app.core.config import (
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
+users_collection = db["users"]
 
-client = MongoClient(MONGODB_URI)
-database = client[MONGODB_DATABASE]
-users_collection = database["users"]
-
-JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
-JWT_EXPIRATION_SECONDS = int(os.getenv("JWT_EXPIRATION_SECONDS"))
-JWT_COOKIE_NAME = os.getenv("JWT_COOKIE_NAME")
-
-
-class SignupRequest(BaseModel):
-    name: str
-    email: str
-    password: str
-
-
-class LoginRequest(BaseModel):
-    email: str
-    password: str
 
 
 def _hash_password(password: str) -> str:
     return hashlib.sha256(password.encode("utf-8")).hexdigest()
 
-
-def _base64url_encode(data: bytes) -> str:
-    return base64.urlsafe_b64encode(data).rstrip(b"=").decode("utf-8")
-
-
-def _create_jwt(payload: dict[str, object]) -> str:
-    header = {
-        "alg": "HS256",
-        "typ": "JWT"
-    }
-
-    header_b64 = _base64url_encode(
-        json.dumps(header, separators=(",", ":")).encode("utf-8")
+def _create_jwt(id: str, email: str) -> str:
+    issued_at = int(time.time())
+    return jwt.encode(
+        {
+            "id": id,
+            "email":email,
+            "iat": issued_at,
+            "exp":issued_at + int(JWT_EXPIRATION_SECONDS)
+        },
+        JWT_SECRET_KEY,
+        algorithm="HS256"
     )
-    payload_b64 = _base64url_encode(
-        json.dumps(payload, separators=(",", ":")).encode("utf-8")
-    )
-
-    signing_input = f"{header_b64}.{payload_b64}".encode("utf-8")
-    signature = hmac.new(
-        JWT_SECRET_KEY.encode("utf-8"),
-        signing_input,
-        hashlib.sha256
-    ).digest()
-
-    return f"{header_b64}.{payload_b64}.{_base64url_encode(signature)}"
 
 
 @router.post("/signup")
@@ -119,24 +80,13 @@ def login(payload: LoginRequest, response: Response):
             detail="Invalid email or password"
         )
 
-    issued_at = int(time.time())
-    expires_at = issued_at + JWT_EXPIRATION_SECONDS
-    token = _create_jwt(
-        {
-            "sub": user["id"],
-            "email": user["email"],
-            "name": user["name"],
-            "iat": issued_at,
-            "exp": expires_at,
-            "jti": str(uuid4())
-        }
-    )
+    token = _create_jwt(user["id"], user["email"])
 
     response.set_cookie(
         key=JWT_COOKIE_NAME,
         value=token,
         httponly=True,
-        secure=False,
+        secure=os.getenv("ENVIRONMENT") == "production", #changes here
         samesite="lax",
         max_age=JWT_EXPIRATION_SECONDS,
         path="/"

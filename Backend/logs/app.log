@@ -17425,3 +17425,606 @@ Response headers:
     'request-id': 'fa69cf8a-5842-11f1-baca-2c3b70e3ccec'
     'elapsed-time': 'REDACTED'
     'Date': 'Mon, 25 May 2026 14:06:52 GMT'
+2026-05-25 20:38:29,583 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 20:38:29,853 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '96a74239-584b-11f1-b7d8-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 20:38:30,771 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '96a74239-584b-11f1-b7d8-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 15:08:30 GMT'
+2026-05-25 20:38:30,776 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '9734287e-584b-11f1-9790-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 20:38:31,585 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '9734287e-584b-11f1-9790-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 15:08:30 GMT'
+2026-05-25 20:38:40,160 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 20:38:40,347 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '9ce89b67-584b-11f1-b2e4-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 20:38:41,242 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '9ce89b67-584b-11f1-b2e4-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 15:08:40 GMT'
+2026-05-25 20:38:41,246 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '9d71cae1-584b-11f1-a225-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 20:38:42,024 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '9d71cae1-584b-11f1-a225-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 15:08:41 GMT'
+2026-05-25 22:03:31,627 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:03:33,274 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '78879c1d-5857-11f1-a10b-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:03:35,309 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '78879c1d-5857-11f1-a10b-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 16:33:34 GMT'
+2026-05-25 22:03:35,319 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '79bf792a-5857-11f1-87cd-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:03:36,483 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '79bf792a-5857-11f1-87cd-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 16:33:36 GMT'
+2026-05-25 22:03:56,436 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:03:56,829 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '8691c946-5857-11f1-8b94-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:03:57,850 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '8691c946-5857-11f1-8b94-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 16:33:56 GMT'
+2026-05-25 22:03:57,859 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '872ee5b1-5857-11f1-9b38-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:03:58,897 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '872ee5b1-5857-11f1-9b38-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 16:33:58 GMT'
+2026-05-25 22:32:18,901 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:32:19,359 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '7d5b2761-585b-11f1-bbd8-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:32:20,832 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '7d5b2761-585b-11f1-bbd8-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:02:20 GMT'
+2026-05-25 22:32:20,843 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '7e3d8895-585b-11f1-a26b-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:32:22,139 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '7e3d8895-585b-11f1-a26b-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:02:21 GMT'
+2026-05-25 22:32:42,015 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:32:42,460 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '8b2024d7-585b-11f1-b36b-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:32:43,725 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '8b2024d7-585b-11f1-b36b-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:02:43 GMT'
+2026-05-25 22:32:43,736 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '8be2d31d-585b-11f1-8053-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:32:44,965 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '8be2d31d-585b-11f1-8053-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:02:44 GMT'
+2026-05-25 22:37:11,860 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:37:12,299 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '2bf62114-585c-11f1-91f5-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:37:13,644 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '2bf62114-585c-11f1-91f5-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:07:13 GMT'
+2026-05-25 22:37:13,655 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '2cc53dda-585c-11f1-842d-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:37:14,754 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '2cc53dda-585c-11f1-842d-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:07:14 GMT'
+2026-05-25 22:37:35,823 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:37:36,203 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '3a359862-585c-11f1-88a3-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:37:37,507 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '3a359862-585c-11f1-88a3-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:07:37 GMT'
+2026-05-25 22:37:37,517 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '3afe44df-585c-11f1-9d0a-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 22:37:38,673 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '3afe44df-585c-11f1-9d0a-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:07:38 GMT'
+2026-05-25 22:39:00,117 | INFO | IntelliRetailAI | Agent interaction endpoint called
+2026-05-25 22:39:00,118 | INFO | IntelliRetailAI | User Query: which region has highest sales ?
+2026-05-25 22:39:02,553 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:39:03,864 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:39:05,844 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:39:07,480 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 22:39:07,495 | INFO | IntelliRetailAI | Workflow execution completed
+2026-05-25 22:39:07,496 | INFO | IntelliRetailAI | Routes used: ['analyst']
+2026-05-25 23:00:45,912 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:00:46,104 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '76a7caa2-585f-11f1-987f-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:00:47,047 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '76a7caa2-585f-11f1-987f-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:30:46 GMT'
+2026-05-25 23:00:47,052 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '77388384-585f-11f1-acb9-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:00:47,871 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '77388384-585f-11f1-acb9-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:30:47 GMT'
+2026-05-25 23:00:56,403 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:00:56,608 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '7ceaa290-585f-11f1-bcac-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:00:57,498 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '7ceaa290-585f-11f1-bcac-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:30:56 GMT'
+2026-05-25 23:00:57,503 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '7d734333-585f-11f1-b398-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:00:58,292 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '7d734333-585f-11f1-b398-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:30:57 GMT'
+2026-05-25 23:01:58,245 | INFO | IntelliRetailAI | Agent interaction endpoint called
+2026-05-25 23:01:58,245 | INFO | IntelliRetailAI | User Query: highest sales in which region
+2026-05-25 23:02:00,082 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:02:01,330 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:02:03,254 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:02:05,004 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:02:05,019 | INFO | IntelliRetailAI | Workflow execution completed
+2026-05-25 23:02:05,019 | INFO | IntelliRetailAI | Routes used: ['analyst']
+2026-05-25 23:02:44,710 | INFO | IntelliRetailAI | Agent interaction endpoint called
+2026-05-25 23:02:44,710 | INFO | IntelliRetailAI | User Query: tell me about best selling product
+2026-05-25 23:02:46,024 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:02:47,133 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:02:49,073 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:03:01,734 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:03:08,393 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:03:08,399 | INFO | IntelliRetailAI | Workflow execution completed
+2026-05-25 23:03:08,399 | INFO | IntelliRetailAI | Routes used: ['analyst', 'market']
+2026-05-25 23:04:48,330 | INFO | IntelliRetailAI | Agent interaction endpoint called
+2026-05-25 23:04:48,330 | INFO | IntelliRetailAI | User Query: top 10 best selling product in my store
+2026-05-25 23:04:49,717 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:04:50,797 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:04:55,484 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:04:58,308 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:04:58,313 | INFO | IntelliRetailAI | Workflow execution completed
+2026-05-25 23:04:58,313 | INFO | IntelliRetailAI | Routes used: ['analyst']
+2026-05-25 23:07:20,688 | INFO | IntelliRetailAI | Agent interaction endpoint called
+2026-05-25 23:07:20,689 | INFO | IntelliRetailAI | User Query: hi what can you help me with
+2026-05-25 23:07:22,138 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:07:23,571 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:07:23,575 | INFO | IntelliRetailAI | Workflow execution completed
+2026-05-25 23:07:23,576 | INFO | IntelliRetailAI | Routes used: ['none']
+2026-05-25 23:20:12,849 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:20:13,043 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '2e349d08-5862-11f1-9a9d-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:20:13,974 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '2e349d08-5862-11f1-9a9d-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:50:13 GMT'
+2026-05-25 23:20:13,979 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '2ec38184-5862-11f1-8114-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:20:14,780 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '2ec38184-5862-11f1-8114-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:50:13 GMT'
+2026-05-25 23:20:23,110 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:20:23,309 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '34530395-5862-11f1-a138-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:20:24,189 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '34530395-5862-11f1-a138-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:50:23 GMT'
+2026-05-25 23:20:24,194 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '34da2348-5862-11f1-acc6-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:20:25,012 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '34da2348-5862-11f1-acc6-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:50:23 GMT'
+2026-05-25 23:20:33,495 | INFO | IntelliRetailAI | Agent interaction endpoint called
+2026-05-25 23:20:33,495 | INFO | IntelliRetailAI | User Query: hi 
+2026-05-25 23:20:35,694 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:20:35,709 | INFO | IntelliRetailAI | Workflow execution completed
+2026-05-25 23:20:35,709 | INFO | IntelliRetailAI | Routes used: ['general']
+2026-05-25 23:21:29,663 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-25 23:21:29,857 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '5bfd766c-5862-11f1-94c5-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:21:30,732 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '5bfd766c-5862-11f1-94c5-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:51:29 GMT'
+2026-05-25 23:21:30,737 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '5c83c830-5862-11f1-a094-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-25 23:21:31,591 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '5c83c830-5862-11f1-a094-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Mon, 25 May 2026 17:51:31 GMT'

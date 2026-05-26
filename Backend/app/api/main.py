@@ -28,6 +28,8 @@ from app.Monitoring.telemetry import (
     
 )
 
+from fastapi.middleware.cors import CORSMiddleware
+
 from app.core.config import (
     LANGCHAIN_API_KEY,
     LANGCHAIN_PROJECT
@@ -70,6 +72,20 @@ app = FastAPI(
 app.add_middleware(AuthMiddleware)
 
 
+#For backend and frontend connection
+FRONTEND_ORIGIN = os.getenv(
+    "FRONTEND_ORIGIN",
+    "http://localhost:8501"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[FRONTEND_ORIGIN],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+#========================================
 #Register routes
 
 app.include_router(
