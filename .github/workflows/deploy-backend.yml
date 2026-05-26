@@ -12,6 +12,9 @@ jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: ${{ github.workspace }}/Backend
+
     steps:
       - uses: actions/checkout@v4
 
