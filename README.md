@@ -4,10 +4,40 @@ AI-powered retail intelligence platform with a Streamlit frontend, FastAPI backe
 
 ![Architecture workflow](docs/architecture-workflow.png)
 
+## Project Screenshots
+
+Add the following screenshots under the `docs` folder:
+
+```text
+docs/backend-api-docs.png
+docs/frontend-dashboard.png
+```
+
+### Backend API Docs
+
+![Backend API Docs](docs/backend-api-docs.png)
+
+Live backend Swagger docs:
+
+```text
+https://intelliretail-backend-b2gmcda7f8hce9h9.koreacentral-01.azurewebsites.net/docs
+```
+
+### Frontend Dashboard
+
+![Frontend Dashboard](docs/frontend-dashboard.png)
+
+Live frontend app:
+
+```text
+https://intelliretail-frontend-dbarf0gbatcmgdgd.koreacentral-01.azurewebsites.net
+```
+
 ## Contents
 
 - [Overview](#overview)
 - [Core Features](#core-features)
+- [Project Screenshots](#project-screenshots)
 - [Architecture](#architecture)
 - [Workflow](#workflow)
 - [Project Structure](#project-structure)
