@@ -2,7 +2,7 @@
 
 AI-powered retail intelligence platform with a Streamlit frontend, FastAPI backend, LangGraph-based multi-agent orchestration, Azure OpenAI, Azure AI Search, Azure ML, MongoDB authentication, and retail analytics over Parquet data.
 
-![Architecture workflow](docs/architecture-workflo.png)
+![Architecture workflow](docs/architecture-workflow.png)
 
 ## Project Screenshots
 
