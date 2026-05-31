@@ -20212,3 +20212,189 @@ Response headers:
     'X-Content-Type-Options': 'REDACTED'
     'Date': 'Sun, 31 May 2026 01:23:51 GMT'
 2026-05-31 06:53:49,030 | ERROR | azure.monitor.opentelemetry.exporter.export._base | Non-retryable server side error: Operation returned an invalid status 'Bad Request'.
+2026-05-31 09:44:39,854 | INFO | IntelliRetailAI | Connecting to Azure Blob Storage...
+2026-05-31 09:44:39,877 | INFO | IntelliRetailAI | Downloading cleaned dataset...
+2026-05-31 09:44:39,879 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://intelliretailstorage.blob.core.windows.net/cleaned/cleaned_dataset'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '3e3e9c81-5ca7-11f1-8008-2c3b70e3ccec'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-05-31 09:44:40,829 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 404
+Response headers:
+    'Content-Length': '215'
+    'Content-Type': 'application/xml'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'd9365491-c01e-001f-41b4-f03863000000'
+    'x-ms-client-request-id': '3e3e9c81-5ca7-11f1-8008-2c3b70e3ccec'
+    'x-ms-version': 'REDACTED'
+    'x-ms-error-code': 'BlobNotFound'
+    'Date': 'Sun, 31 May 2026 04:14:40 GMT'
+2026-05-31 09:44:40,830 | ERROR | IntelliRetailAI | Blob download failed: The specified blob does not exist.
+RequestId:d9365491-c01e-001f-41b4-f03863000000
+Time:2026-05-31T04:14:40.7066385Z
+ErrorCode:BlobNotFound
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.
+RequestId:d9365491-c01e-001f-41b4-f03863000000
+Time:2026-05-31T04:14:40.7066385Z</Message></Error>
+2026-05-31 09:50:52,060 | INFO | IntelliRetailAI | Connecting to Azure Blob Storage...
+2026-05-31 09:50:52,084 | INFO | IntelliRetailAI | Downloading cleaned dataset...
+2026-05-31 09:50:52,084 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://intelliretailstorage.blob.core.windows.net/cleaned/cleaned_dataset.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.29.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '1c18d5ac-5ca8-11f1-9ce4-2c3b70e3ccec'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-05-31 09:50:52,914 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 206
+Response headers:
+    'Content-Length': '360727'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Fri, 22 May 2026 05:36:46 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DEB7C41D29F698"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '5bcfe13d-901e-003d-26b4-f0fd7c000000'
+    'x-ms-client-request-id': '1c18d5ac-5ca8-11f1-9ce4-2c3b70e3ccec'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Sun, 31 May 2026 04:20:52 GMT'
+2026-05-31 09:50:53,603 | INFO | IntelliRetailAI | Dataset downloaded successfully!
+2026-05-31 09:50:53,604 | INFO | IntelliRetailAI | Loading dataset...
+2026-05-31 09:50:54,248 | INFO | IntelliRetailAI | Dataset loaded successfully | Shape: (5901, 29)
+2026-05-31 09:50:54,248 | INFO | IntelliRetailAI | Selected Features: ['Sales', 'Profit', 'Quantity', 'Profit_Margin', 'Shipping_Days']
+2026-05-31 09:50:54,257 | INFO | IntelliRetailAI | Handling missing values...
+2026-05-31 09:50:54,257 | INFO | IntelliRetailAI | Applying feature scaling...
+2026-05-31 09:50:54,262 | INFO | IntelliRetailAI | Feature scaling completed!
+2026-05-31 09:50:54,262 | INFO | IntelliRetailAI | Training Isolation Forest model...
+2026-05-31 09:50:54,513 | INFO | IntelliRetailAI | Model training completed successfully!
+2026-05-31 09:50:54,513 | INFO | IntelliRetailAI | Generating anomaly predictions...
+2026-05-31 09:50:54,567 | INFO | IntelliRetailAI | Predictions generated successfully!
+2026-05-31 09:50:54,567 | INFO | IntelliRetailAI | Evaluating anomaly results...
+2026-05-31 09:50:54,574 | INFO | IntelliRetailAI | Normal Records: 5488
+2026-05-31 09:50:54,575 | INFO | IntelliRetailAI | Anomaly Records: 413
+2026-05-31 09:50:54,575 | INFO | IntelliRetailAI | Displaying sample anomalies...
+2026-05-31 09:50:54,607 | INFO | IntelliRetailAI | Evaluation completed successfully!
+2026-05-31 09:50:54,607 | INFO | IntelliRetailAI | Saving anomaly model...
+2026-05-31 09:50:54,661 | INFO | IntelliRetailAI | Model saved successfully at: app/ml/artifacts/anomaly_model.pkl
+2026-05-31 09:50:54,662 | INFO | IntelliRetailAI | Scaler saved successfully at: app/ml/artifacts/anomaly_scaler.pkl
+2026-05-31 09:50:54,758 | INFO | IntelliRetailAI | Anomaly results saved at: anomaly_output.csv
+2026-05-31 09:50:54,758 | INFO | IntelliRetailAI | Anomaly detection pipeline completed successfully!
+2026-05-31 09:52:54,496 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-31 09:52:55,517 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '65ab012b-5ca8-11f1-923c-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-31 09:52:56,452 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '65ab012b-5ca8-11f1-923c-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 31 May 2026 04:22:56 GMT'
+2026-05-31 09:52:56,458 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '663abc93-5ca8-11f1-9245-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-31 09:52:57,257 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '663abc93-5ca8-11f1-9245-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 31 May 2026 04:22:56 GMT'
+2026-05-31 09:53:08,901 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-31 09:53:09,089 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '6dc22860-5ca8-11f1-8214-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-31 09:53:09,922 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '6dc22860-5ca8-11f1-8214-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 31 May 2026 04:23:08 GMT'
+2026-05-31 09:53:09,927 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'https://aisearchv2new.search.windows.net/indexes('document-rules-v')?api-version=2026-04-01'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json;odata.metadata=minimal'
+    'x-ms-client-request-id': '6e420944-5ca8-11f1-a3f0-2c3b70e3ccec'
+    'User-Agent': 'langchain azsdk-python-search-documents/12.0.0 Python/3.12.10 (Windows-11-10.0.26200-SP0)'
+    'api-key': 'REDACTED'
+No body was attached to the request
+2026-05-31 09:53:10,731 | INFO | azure.core.pipeline.policies.http_logging_policy | Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/json; odata.metadata=minimal; odata.streaming=true; charset=utf-8'
+    'Content-Encoding': 'REDACTED'
+    'ETag': '"0x8DEB98AF89E94ED"'
+    'Vary': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'Preference-Applied': 'REDACTED'
+    'OData-Version': 'REDACTED'
+    'request-id': '6e420944-5ca8-11f1-a3f0-2c3b70e3ccec'
+    'elapsed-time': 'REDACTED'
+    'Date': 'Sun, 31 May 2026 04:23:10 GMT'
+2026-05-31 09:56:10,153 | INFO | IntelliRetailAI | Anomaly endpoint called
+2026-05-31 09:56:10,153 | INFO | IntelliRetailAI | Anomaly payload: {'profit': -3000.0, 'profit_margin': -60.0, 'quantity': 5, 'sales': 5000.0, 'shipping_days': 15}
+2026-05-31 09:56:10,153 | INFO | IntelliRetailAI | Anomaly agent started
+2026-05-31 09:56:10,165 | INFO | IntelliRetailAI | Input Data: [{'Sales': 5000.0, 'Profit': -3000.0, 'Quantity': 5, 'Profit_Margin': -60.0, 'Shipping_Days': 15}]
+2026-05-31 09:56:10,167 | INFO | IntelliRetailAI | Data scaling completed
+2026-05-31 09:56:10,182 | INFO | IntelliRetailAI | Prediction Result: -1
+2026-05-31 09:56:10,183 | INFO | IntelliRetailAI | Anomaly Status: Anomaly Detected
+2026-05-31 09:56:12,008 | INFO | httpx | HTTP Request: POST https://retailai12.services.ai.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-05-31 09:56:12,028 | INFO | IntelliRetailAI | Anomaly agent completed successfully
+2026-05-31 09:56:12,028 | INFO | IntelliRetailAI | Anomaly detection completed
+2026-05-31 09:56:12,028 | INFO | IntelliRetailAI | Anomaly Status: Anomaly Detected

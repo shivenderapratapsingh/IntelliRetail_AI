@@ -8,7 +8,7 @@ from azure.storage.blob import BlobServiceClient
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
 
-from core.logger import logger
+from app.core.logger import logger
 
 
 
@@ -151,7 +151,7 @@ logger.info(
 
 model = IsolationForest(
     n_estimators=200,
-    contamination=0.02,
+    contamination=0.07,
     random_state=42
 )
 
@@ -236,10 +236,19 @@ from sklearn.metrics import classification_report
 #synthesis 
 
 df["GroundTruth"] = (
-    (df["Profit"] < 0) &
-    (df["Sales"] > 10000)
-).astype(int)
 
+    (df["Profit"] < -500) |
+
+    (df["Profit_Margin"] < -50) |
+
+    (
+        (df["Sales"] > 3000) &
+        (df["Profit"] < 0)
+    ) |
+
+    (df["Shipping_Days"] > 10)
+
+).astype(int)
 
 #convert model prediction
 
