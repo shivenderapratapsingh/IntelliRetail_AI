@@ -40,6 +40,7 @@ from app.core.config import (
 
 # setup_telemetry()
 
+
 #Langsmith it is for agent meteric
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
