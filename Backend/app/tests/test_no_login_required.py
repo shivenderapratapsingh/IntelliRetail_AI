@@ -1,7 +1,22 @@
 from fastapi.testclient import TestClient
 
 from app.api.main import app
+import os
+os.environ.setdefault("AZURE_OPENAI_API_KEY", "test-key")
+os.environ.setdefault("AZURE_OPENAI_ENDPOINT", "https://test.openai.azure.com/")
+os.environ.setdefault("AZURE_OPENAI_DEPLOYMENT", "test-deployment")
+os.environ.setdefault("AZURE_OPENAI_API_VERSION", "2024-02-15-preview")
 
+os.environ.setdefault("JWT_SECRET_KEY", "test-secret")
+os.environ.setdefault("JWT_EXPIRATION_SECONDS", "3600")
+os.environ.setdefault("JWT_COOKIE_NAME", "access_token")
+
+os.environ.setdefault("MONGODB_URI", "mongodb://localhost:27017")
+os.environ.setdefault("MONGODB_DATABASE", "intelliretail_test")
+os.environ.setdefault("MONGODB_DB_NAME", "intelliretail_test")
+
+os.environ.setdefault("LANGCHAIN_API_KEY", "test-key")
+os.environ.setdefault("LANGCHAIN_PROJECT", "test-project")
 
 client = TestClient(app)
 
